@@ -3,12 +3,13 @@
 
 Name:             R-%{packname}
 Version:          0.0_8
-Release:          2
+Release:          1
 Summary:          combinatorics utilities
 Group:            Sciences/Mathematics
 License:          GPL-2
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.0-8.tar.gz
+Source1:          NAMESPACE
 BuildArch:        noarch
 Requires:         R-core
 BuildRequires:    R-devel Rmath-devel texlive-collection-latex 
@@ -18,6 +19,7 @@ routines for combinatorics
 
 %prep
 %setup -q -c -n %{packname}
+cp %{SOURCE1} combinat/
 
 %build
 
